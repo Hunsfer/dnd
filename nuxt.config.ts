@@ -15,8 +15,21 @@ export default defineNuxtConfig({
         config.plugins.push(vuetify({ autoImport: true }))
       })
     },
-    //...
+    '@nuxt-alt/http',
+    '@nuxt-alt/proxy',
+    '@nuxt-alt/auth',
+    '@pinia/nuxt'
   ],
+
+  proxy: {
+    debug: false,
+    proxies: {
+      '/dnd-api': {
+        target: process.env.DND_API_BASE,
+        rewrite: (path) => path.replace(/^\/dnd-api/, '')
+      }
+    }
+  },
 
   vite: {
     vue: {
