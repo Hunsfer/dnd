@@ -16,7 +16,7 @@ const drawer = ref(null)
 
 		<v-sheet
 			class="pa-4"
-			color="gray-lighten-4"
+			color="grey-lighten-4"
 		>
 			<v-avatar
 				class="mb-4"
@@ -26,8 +26,9 @@ const drawer = ref(null)
 			<div>
 				samediacc666@gmail.com
 			</div>
+		</v-sheet>
 
-			<v-divider></v-divider>
+		<v-divider></v-divider>
 
 			<v-list>
 				<v-list-item
@@ -39,7 +40,6 @@ const drawer = ref(null)
 				></v-list-item>
 			</v-list>
 
-		</v-sheet>
 	</v-navigation-drawer>
 </template>
 

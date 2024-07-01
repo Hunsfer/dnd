@@ -7,7 +7,7 @@
 			<layout-aside />
 
 			<v-main class="d-flex align-center justify-center">
-				Main content
+				<slot />
 			</v-main>
 		</v-layout>
 	</v-app>
