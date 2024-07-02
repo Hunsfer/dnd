@@ -2,10 +2,13 @@
 import { ref } from 'vue'
 
 const links = [
-	['mdi-inbox-arrow-down', 'Inbox'],
-	['mdi-send', 'Send'],
-	['mdi-delete', 'Trash'],
-	['mdi-alert-octagon', 'Spam'],
+	{
+		to: {
+			name: 'classes'
+		},
+		label: 'Classes',
+		icon: 'mdi-account-group'
+	}
 ]
 
 const drawer = ref(null)
@@ -32,12 +35,18 @@ const drawer = ref(null)
 
 			<v-list>
 				<v-list-item
-					v-for="[icon, text] in links"
-					:key="icon"
-					:prepend-icon="icon"
-					:title="text"
+					v-for="link in links"
+					:key="link.to.name"
+					:prepend-icon="link.icon"
 					link
-				></v-list-item>
+				>
+					<nuxt-link
+						:to="link.to"
+						class="text-decoration-none text-white"
+					>
+						{{ link.label }}
+					</nuxt-link>
+				</v-list-item>
 			</v-list>
 
 	</v-navigation-drawer>

@@ -5,19 +5,27 @@ export namespace CommonApi {
 
 	export namespace GetAllAvailableResourcesForAnEndpoint {
 		export enum listOfEndpoints {
-			AbilityScores = 'ability-scores'
+			AbilityScores = 'ability-scores',
+			Classes = 'classes'
 		}
 
-		interface ResponseItem {
+		export type BaseEntity = {
 			index?: string,
 			level?: number,
 			name?: string,
 			url?: string
 		}
 
-		interface ResponseList {
+		export type BaseOption = {
+			desc?: string,
+			choose?: number,
+			type?: string,
+			from?: Record<string, any>
+		}
+
+		export type ResponseList = {
 			count?: number,
-			results?: ResponseItem[]
+			results?: BaseEntity[]
 		}
 
 		export type RequestDTO = listOfEndpoints

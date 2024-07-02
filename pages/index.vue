@@ -1,8 +1,6 @@
 <script setup lang='ts'>
 import dndApi from "~/api/dnd-api/index";
 import { CommonApi } from "~/types/api/common.api";
-
-const cards = ['Today', 'Yesterday']
 </script>
 
 <template>
