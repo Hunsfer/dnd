@@ -14,7 +14,7 @@ export const classesApi = {
 
 	getClassByIndex: async (index: Classes.ClassesApi.GetClassByIndex.RequestDTO): Promise<Classes.ClassesApi.GetClassByIndex.ResponseDTO | null> => {
 		try {
-			return await $http.$get(`dnd-api/api/classes/${index}`)
+			return await $http.$get(`/dnd-api/api/classes/${index}`)
 		} catch (e) {
 			console.log(e);
 			return null
@@ -23,7 +23,7 @@ export const classesApi = {
 
 	getAllLevelRecourcesByClass: async (params: Classes.ClassesApi.GetAllLevelResourceByClass.RequestDTO) => {
 		try {
-			return await $http.$get(`dnd-api/api/classes/${params.index}/levels`, { query: { subclass: params.query?.subclass } })
+			return await $http.$get(`/dnd-api/api/classes/${params.index}/levels`, { query: { subclass: params.query?.subclass } })
 		} catch (e) {
 			console.log(e);
 			return []

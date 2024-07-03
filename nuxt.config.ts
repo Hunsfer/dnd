@@ -21,12 +21,17 @@ export default defineNuxtConfig({
     '@pinia/nuxt'
   ],
 
+  http: {
+    proxy: true,
+  },
+
   proxy: {
-    debug: false,
+    debug: true,
     proxies: {
-      '/dnd-api': {
+      '/dnd-api/': {
         target: process.env.DND_API_BASE,
-        rewrite: (path) => path.replace(/^\/dnd-api/, '')
+        rewrite: (path) => path.replace(/^\/dnd-api/, ''),
+        logLevel: 'debug'
       }
     }
   },

@@ -73,8 +73,18 @@ const showFeatures = (features: CommonApi.GetAllAvailableResourcesForAnEndpoint.
 		<template v-slot:item.prof_bonus="{ value }">
 			{{ '+' + value }}
 		</template>
-		<template v-slot:item.features="{ value }">
-			{{ showFeatures(value) }}
+		<template v-slot:item.features="{ item }">
+			<div class="d-flex flex-column">
+				<nuxt-link
+					v-for="feature in item.features"
+					:key="feature.index"
+					:to="{ name: 'dictionary-feature',
+						params: { feature: feature.index } }"
+					class="text-white"
+				>
+					{{ feature.name }}
+				</nuxt-link>
+			</div>
 		</template>
 		<template v-slot:item.martial_arts="{ value }">
 			{{ getDiceString(value.dice_count, value.dice_value) }}

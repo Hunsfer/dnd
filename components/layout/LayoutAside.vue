@@ -8,6 +8,13 @@ const links = [
 		},
 		label: 'Classes',
 		icon: 'mdi-account-group'
+	},
+	{
+		to: {
+			name: 'dictionary'
+		},
+		label: 'Dictionary',
+		icon: 'mdi-book-alphabet'
 	}
 ]
 

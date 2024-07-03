@@ -10,7 +10,7 @@ const tab = ref('barbarian')
 
 <template>
 	<v-container class="py-8 px-6" fluid>
-		<v-card :loading="isLoading">
+		<v-card>
 			<template v-if="!isLoading">
 				<v-tabs
 					v-model="tab"
