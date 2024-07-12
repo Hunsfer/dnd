@@ -1,11 +1,11 @@
 <script setup lang='ts'>
 import { useRoute } from "nuxt/app";
-import { useDictionaryItemStore } from "~/stores/dictionary/dictionary.item"
+import { useFeatureItemStore } from "~/stores/dictionary/features/features.item"
 import { storeToRefs } from "pinia";
 
 const route = useRoute()
 
-const featureStore = useDictionaryItemStore(route.params.feature)
+const featureStore = useFeatureItemStore(route.params.feature)
 const { feature, isLoading } = storeToRefs(featureStore)
 </script>
 

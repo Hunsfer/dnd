@@ -1,9 +1,9 @@
 <script setup lang='ts'>
-import { useDictionaryStore } from "~/stores/dictionary/dictionary";
+import { useFeaturesStore } from "~/stores/dictionary/features/features";
 import { storeToRefs } from "pinia";
 
-const dictionaryStore = useDictionaryStore()
-const { paginationModel, features, isLoading } = storeToRefs(dictionaryStore)
+const featuresStore = useFeaturesStore()
+const { paginationModel, features, isLoading } = storeToRefs(featuresStore)
 const search = ref('')
 
 const headers = [

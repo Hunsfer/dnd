@@ -5,7 +5,7 @@ import dndApi from "~/api/dnd-api/index";
 // @ts-ignore
 import { ref } from 'vue'
 
-export const useDictionaryStore = defineStore('dictionaryStore', () => {
+export const useFeaturesStore = defineStore('featuresStore', () => {
 	const paginationModel = ref<{
 		limit: number,
 		page: number

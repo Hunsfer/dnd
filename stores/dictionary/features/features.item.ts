@@ -4,7 +4,7 @@ import { defineStore } from "pinia";
 import { useAsyncData } from "nuxt/app";
 import dndApi from "~/api/dnd-api/index";
 
-export const useDictionaryItemStore = (index: Dictionary.DictionaryApi.GetFeatureByIndex.RequestDTO) => defineStore(`dictionaryStore:${index}`, () => {
+export const useFeatureItemStore = (index: Dictionary.DictionaryApi.GetFeatureByIndex.RequestDTO) => defineStore(`featureStore:${index}`, () => {
 	const {data: feature, refresh: refreshFeature, pending: isLoading} = useAsyncData(`fetch:feature:${index}` , () => {
 		return dndApi.dictionary.getFeatureByIndex(index)
 	}, {

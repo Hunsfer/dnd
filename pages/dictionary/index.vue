@@ -11,6 +11,7 @@ const tabs = [
 
 <template>
 	<v-container class="py-8 px-6" fluid>
+		{{ tab }}
 		<v-tabs
 			v-model="tab"
 			bg-color="secondary"
