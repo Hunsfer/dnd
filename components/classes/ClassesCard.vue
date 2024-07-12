@@ -23,7 +23,7 @@ const { classItem, isLoading } = storeToRefs(classItemStore)
 
 			<v-row>
 				<v-col cols="4">
-					<v-card color="primary" class="mt-2 mx-2 fill-height">
+					<v-card color="primary" class="mt-2 mx-2 fill-height" :loading="isLoading">
 						<v-card-title>
 							Hit points
 						</v-card-title>
@@ -39,7 +39,7 @@ const { classItem, isLoading } = storeToRefs(classItemStore)
 					</v-card>
 				</v-col>
 				<v-col cols="4">
-					<v-card color="primary" class="mt-2 mx-2 fill-height">
+					<v-card color="primary" class="mt-2 mx-2 fill-height" :loading="isLoading">
 						<v-card-title>
 							Proficiencies
 						</v-card-title>
@@ -51,7 +51,7 @@ const { classItem, isLoading } = storeToRefs(classItemStore)
 					</v-card>
 				</v-col>
 				<v-col cols="4">
-					<v-card color="primary" class="mt-2 mx-2 fill-height">
+					<v-card color="primary" class="mt-2 mx-2 fill-height" :loading="isLoading">
 						<v-card-title>
 							Equipment
 						</v-card-title>

@@ -41,19 +41,19 @@ const drawer = ref(null)
 		<v-divider></v-divider>
 
 			<v-list>
-				<v-list-item
+				<nuxt-link
 					v-for="link in links"
 					:key="link.to.name"
-					:prepend-icon="link.icon"
-					link
+					:to="link.to"
+					class="text-decoration-none text-white"
 				>
-					<nuxt-link
-						:to="link.to"
-						class="text-decoration-none text-white"
+					<v-list-item
+						:prepend-icon="link.icon"
+						link
 					>
-						{{ link.label }}
-					</nuxt-link>
-				</v-list-item>
+							{{ link.label }}
+					</v-list-item>
+				</nuxt-link>
 			</v-list>
 
 	</v-navigation-drawer>

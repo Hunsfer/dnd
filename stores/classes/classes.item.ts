@@ -14,7 +14,9 @@ export const useClassesItemStore = (index: Classes.ClassesTypes.ClassIndex) => d
 		}
 	}, {
 		default: () => {
-			return {}
+			return {
+				name: ''
+			}
 		}
 	})
 
