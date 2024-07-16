@@ -39,16 +39,26 @@ const { classItem, isLoading } = storeToRefs(classItemStore)
 					</v-card>
 				</v-col>
 				<v-col cols="4">
-					<v-card color="primary" class="mt-2 mx-2 fill-height" :loading="isLoading">
-						<v-card-title>
+					<v-list color="primary">
+						<v-list-subheader>
 							Proficiencies
-						</v-card-title>
-						<ul class="ps-4 ml-4">
-							<li v-for="prof in classItem.proficiencies" :key="prof.key">
+						</v-list-subheader>
+						<nuxt-link
+							v-for="prof in classItem.proficiencies"
+							:key="prof.key"
+							:to="{
+									name: 'proficiencies-proficiency',
+									params: {
+										proficiency: prof.index
+									}
+								}"
+							class="text-white"
+						>
+							<v-list-item link>
 								{{ prof.name }}
-							</li>
-						</ul>
-					</v-card>
+							</v-list-item>
+						</nuxt-link>
+					</v-list>
 				</v-col>
 				<v-col cols="4">
 					<v-card color="primary" class="mt-2 mx-2 fill-height" :loading="isLoading">
@@ -67,7 +77,7 @@ const { classItem, isLoading } = storeToRefs(classItemStore)
 				</v-col>
 			</v-row>
 
-			<classes-levels v-if="!isLoading" :class-item="classItem" />
+			<classes-levels v-if="!isLoading" :class-item="classItem" class="mt-4" />
 		</template>
 	</v-tabs-window-item>
 </template>
