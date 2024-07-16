@@ -18,5 +18,21 @@ export const dictionaryApi = {
 		} catch (e) {
 			return null
 		}
+	},
+
+	getAllProficiencies: async (): Promise<Dictionary.DictionaryApi.GetAllProficiencies.ResponseDTO | null> => {
+		try {
+			return dndApi.common.getAllAvailableResourcesForAnEndpoint(CommonApi.GetAllAvailableResourcesForAnEndpoint.listOfEndpoints.Proficiencies)
+		} catch (e) {
+			return null
+		}
+	},
+
+	getProficiencyByIndex: async (index: Dictionary.DictionaryApi.GetProficiencyByIndex.RequestDTO): Promise<Dictionary.DictionaryApi.GetFeatureByIndex.ResponseDTO | null> => {
+		try {
+			return $http.$get(`/dnd-api/api/proficiencies/${index}`)
+		} catch (e) {
+			return null
+		}
 	}
 }

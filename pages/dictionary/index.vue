@@ -5,13 +5,16 @@ const tabs = [
 	{
 		key: 'features',
 		title: 'Features'
+	},
+	{
+		key: 'proficiencies',
+		title: 'Proficiencies'
 	}
 ]
 </script>
 
 <template>
 	<v-container class="py-8 px-6" fluid>
-		{{ tab }}
 		<v-tabs
 			v-model="tab"
 			bg-color="secondary"

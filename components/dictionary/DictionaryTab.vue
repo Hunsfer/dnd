@@ -1,6 +1,7 @@
 <script setup lang='ts'>
 import { computed } from "vue";
 import { DictionaryFeature } from '#components'
+import { DictionaryProficiency } from '#components'
 
 const props = withDefaults(defineProps<{
 	index: string
@@ -12,6 +13,8 @@ const windowItem = computed(() => {
 	switch (props.index) {
 		case 'features':
 			return DictionaryFeature
+		case 'proficiencies':
+			return DictionaryProficiency
 	}
 })
 </script>

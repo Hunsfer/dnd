@@ -78,7 +78,7 @@ const showFeatures = (features: CommonApi.GetAllAvailableResourcesForAnEndpoint.
 				<nuxt-link
 					v-for="feature in item.features"
 					:key="feature.index"
-					:to="{ name: 'dictionary-feature',
+					:to="{ name: 'features-feature',
 						params: { feature: feature.index } }"
 					class="text-white"
 				>

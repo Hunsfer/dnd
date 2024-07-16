@@ -1,9 +1,9 @@
 <script setup lang='ts'>
-import { useFeaturesStore } from "~/stores/dictionary/features/features";
+import { useProficienciesStore } from "~/stores/dictionary/proficiencies/proficiencies";
 import { storeToRefs } from "pinia";
 
-const featuresStore = useFeaturesStore()
-const { paginationModel, features, isLoading } = storeToRefs(featuresStore)
+const proficienciesStore = useProficienciesStore()
+const { paginationModel, proficiencies, isLoading } = storeToRefs(proficienciesStore)
 const search = ref('')
 
 const headers = [
@@ -35,14 +35,14 @@ const headers = [
 		<v-data-table
 			v-model:page="paginationModel.page"
 			v-model:items-per-page="paginationModel.limit"
-			:items="features.results"
+			:items="proficiencies.results"
 			:headers="headers"
 			:items-per-page="paginationModel.limit"
 			:search="search"
 			:loading="isLoading"
 		>
 			<template v-slot:item.name="{ item }">
-				<nuxt-link :to="{ name: 'features-feature', params: { feature: item.index } }" class="text-white">
+				<nuxt-link :to="{ name: 'proficiencies-proficiency', params: { proficiency: item.index } }" class="text-white">
 					{{ item.name }}
 				</nuxt-link>
 			</template>

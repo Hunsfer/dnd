@@ -50,7 +50,7 @@ const { feature, isLoading } = storeToRefs(featureStore)
 						<template v-if="feature.feature_specific.invocations && feature.feature_specific.invocations.length">
 							<ul>
 								<li v-for="invocation in feature.feature_specific.invocations" :key="invocation.index">
-									<nuxt-link :to="{ name: 'dictionary-feature', params: { feature: invocation.index } }" class="text-white">
+									<nuxt-link :to="{ name: 'dictionary-features', params: { feature: invocation.index } }" class="text-white">
 										{{ invocation.name }}
 									</nuxt-link>
 								</li>
@@ -59,7 +59,7 @@ const { feature, isLoading } = storeToRefs(featureStore)
 						<template v-if="feature.feature_specific.subfeature_options">
 							<ul>
 								<li v-for="option in feature.feature_specific.subfeature_options.from.options" :key="option.item.index">
-									<nuxt-link :to="{ name: 'dictionary-feature', params: { feature: option.item.index } }" class="text-white">
+									<nuxt-link :to="{ name: 'dictionary-features', params: { feature: option.item.index } }" class="text-white">
 										{{ option.item.name }}
 									</nuxt-link>
 								</li>

@@ -7,7 +7,8 @@ export namespace CommonApi {
 		export enum listOfEndpoints {
 			AbilityScores = 'ability-scores',
 			Classes = 'classes',
-			Features = 'features'
+			Features = 'features',
+			Proficiencies = 'proficiencies'
 		}
 
 		export type BaseEntity = {
