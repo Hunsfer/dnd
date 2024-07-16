@@ -15,6 +15,7 @@
     "@nuxt-alt/http": "^1.7.10",
     "@nuxt-alt/proxy": "^2.5.8",
     "@pinia/nuxt": "^0.5.1",
+    "lodash.debounce": "^4.0.8",
     "nuxt": "^3.12.2",
     "pinia": "^2.1.7",
     "vue": "latest"

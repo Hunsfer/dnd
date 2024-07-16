@@ -11,6 +11,13 @@ const links = [
 	},
 	{
 		to: {
+			name: 'bestiary'
+		},
+		label: 'Bestiary',
+		icon: 'mdi-emoticon-angry'
+	},
+	{
+		to: {
 			name: 'dictionary'
 		},
 		label: 'Dictionary',
