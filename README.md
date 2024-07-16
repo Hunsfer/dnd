@@ -1,3 +1,25 @@
+# Hi there! This is my pet-project.
+
+This is simple nuxt3 project. Here I am making a dashboard for the DnD5e API.
+
+api: https://5e-bits.github.io/
+
+### TO-DO list
+
+- [ ] Add home page
+- [x] Add classes pages
+- [ ] Add subclasses pages
+- [ ] Add races pages
+- [x] Add bestiary pages
+- [ ] Add spells pages
+- [ ] Add person account
+- [x] Dictionary: Features
+- [x] Dictionary: Proficiencies
+- [ ] Dictionary: Equipment
+- [ ] Dictionary: Rules
+- [ ] Add more
+
+
 # Nuxt 3 Minimal Starter
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
