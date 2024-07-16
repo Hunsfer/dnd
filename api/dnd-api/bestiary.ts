@@ -12,5 +12,14 @@ export const bestiaryApi = {
 			console.log(e);
 			return null
 		}
+	},
+
+	getMonsterByIndex: async (index: Bestiary.BestiaryApi.getMonsterByIndex.RequestDTO): Promise<Bestiary.BestiaryApi.getMonsterByIndex.ResponseDTO | null> => {
+		try {
+			return $http.$get(`/dnd-api/api/monsters/${index}`)
+		} catch (e) {
+			console.log(e);
+			return null
+		}
 	}
 }

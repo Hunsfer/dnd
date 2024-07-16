@@ -3,8 +3,7 @@ import { useFeaturesStore } from "~/stores/dictionary/features/features";
 import { storeToRefs } from "pinia";
 
 const featuresStore = useFeaturesStore()
-const { paginationModel, features, isLoading } = storeToRefs(featuresStore)
-const search = ref('')
+const { paginationModel, features, isLoading, search } = storeToRefs(featuresStore)
 
 const headers = [
 	{

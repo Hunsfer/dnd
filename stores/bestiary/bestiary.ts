@@ -3,7 +3,9 @@ import { defineStore } from "pinia";
 import { useLazyAsyncData } from "nuxt/app";
 import dndApi from "~/api/dnd-api/index";
 // @ts-ignore
-import { reactive, ref } from "vue";
+import { reactive, ref, watch } from "vue";
+// @ts-ignore
+import debounce from 'lodash.debounce'
 
 export const useBestiaryStore = defineStore('bestiaryStore', () => {
 	const filterModel = reactive<{
@@ -18,6 +20,9 @@ export const useBestiaryStore = defineStore('bestiaryStore', () => {
 		page: 1
 	})
 
+	const search = ref('')
+	const challengeRating = ref([])
+
 	const { data: bestiary, refresh: refreshBestiary, pending: isLoading } = useLazyAsyncData('fetch:bestiary', () => {
 		return dndApi.bestiary.getBestiary(filterModel)
 	}, {
@@ -30,11 +35,17 @@ export const useBestiaryStore = defineStore('bestiaryStore', () => {
 		watch: [filterModel]
 	})
 
+	watch(challengeRating, debounce(() => {
+		filterModel.challengeRating = challengeRating.value
+	}, 1250))
+
 	return {
 		bestiary,
 		refreshBestiary,
 		isLoading,
 		paginationModel,
-		filterModel
+		filterModel,
+		search,
+		challengeRating
 	}
 })

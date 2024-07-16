@@ -14,6 +14,8 @@ export const useProficienciesStore = defineStore('proficienciesStore', () => {
 		page: 1
 	})
 
+	const search = ref('')
+
 	const { data: proficiencies, refresh: refreshProficiencies, pending: isLoading } = useLazyAsyncData('fetch:proficiencies', () => {
 		return dndApi.dictionary.getAllProficiencies()
 	}, {
@@ -29,6 +31,7 @@ export const useProficienciesStore = defineStore('proficienciesStore', () => {
 		paginationModel,
 		proficiencies,
 		refreshProficiencies,
-		isLoading
+		isLoading,
+		search
 	}
 })

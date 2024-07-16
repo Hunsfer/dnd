@@ -1,14 +1,10 @@
 <script setup lang='ts'>
 import { useBestiaryStore } from "~/stores/bestiary/bestiary";
 import { storeToRefs } from "pinia";
-import { ref, watch } from 'vue'
-import debounce from 'lodash.debounce'
 import { challengeRating as items } from "~/helpers/constants";
 
 const bestiaryStore = useBestiaryStore()
-const { bestiary, isLoading, filterModel, paginationModel } = storeToRefs(bestiaryStore)
-const search = ref('')
-const challengeRating = ref([])
+const { bestiary, isLoading, paginationModel, search, challengeRating } = storeToRefs(bestiaryStore)
 
 const headers = [
 	{
@@ -21,10 +17,6 @@ const headers = [
 		sortable: false
 	}
 ]
-
-watch(challengeRating, debounce(() => {
-	filterModel.value.challengeRating = challengeRating.value
-}, 1250))
 </script>
 
 <template>
@@ -60,7 +52,7 @@ watch(challengeRating, debounce(() => {
 								v-if="index === 5"
 								class="text-grey text-caption align-self-center"
 							>
-								(+{{ filterModel.challengeRating.length - 5 }} others)
+								(+{{ challengeRating.length - 5 }} others)
 							</span>
 						</template>
 							<template v-slot:item="{ props, item }">
@@ -80,7 +72,7 @@ watch(challengeRating, debounce(() => {
 				:loading="isLoading"
 			>
 				<template v-slot:item.name="{ item }">
-					<nuxt-link :to="{ name: 'features-feature', params: { feature: item.index } }" class="text-white">
+					<nuxt-link :to="{ name: 'bestiary-monster', params: { monster: item.index } }" class="text-white">
 						{{ item.name }}
 					</nuxt-link>
 				</template>

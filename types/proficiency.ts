@@ -15,5 +15,10 @@ export namespace Proficiency {
 			races: Omit<CommonApi.GetAllAvailableResourcesForAnEndpoint.BaseEntity, 'level'>[],
 			reference: Omit<CommonApi.GetAllAvailableResourcesForAnEndpoint.BaseEntity, 'level'>
 		} & Omit<CommonApi.GetAllAvailableResourcesForAnEndpoint.BaseEntity, 'level'>
+
+		export type ProficiencyField = {
+			value: number,
+			proficiency: ProficiencyItem
+		}
 	}
 }

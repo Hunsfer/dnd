@@ -14,6 +14,8 @@ export const useFeaturesStore = defineStore('featuresStore', () => {
 		page: 1
 	})
 
+	const search = ref('')
+
 	const {data: features, refresh: refreshFeatures, pending: isLoading} = useAsyncData('fetch:features', () => {
 		return dndApi.dictionary.getAllFeatures()
 	}, {
@@ -29,6 +31,7 @@ export const useFeaturesStore = defineStore('featuresStore', () => {
 		paginationModel,
 		features,
 		refreshFeatures,
-		isLoading
+		isLoading,
+		search
 	}
 })

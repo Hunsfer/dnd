@@ -3,8 +3,7 @@ import { useProficienciesStore } from "~/stores/dictionary/proficiencies/profici
 import { storeToRefs } from "pinia";
 
 const proficienciesStore = useProficienciesStore()
-const { paginationModel, proficiencies, isLoading } = storeToRefs(proficienciesStore)
-const search = ref('')
+const { paginationModel, proficiencies, isLoading, search } = storeToRefs(proficienciesStore)
 
 const headers = [
 	{
