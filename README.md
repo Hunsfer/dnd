@@ -2,7 +2,7 @@
 
 This is simple nuxt3 project. Here I am making a dashboard for the DnD5e API.
 
-api: https://5e-bits.github.io/
+api: [https://5e-bits.github.io/](https://5e-bits.github.io/docs/)
 
 ### TO-DO list
 
